@@ -1,18 +1,3 @@
-/*!
-
- =========================================================
- * Vue Light Bootstrap Dashboard - v2.1.0 (Bootstrap 4)
- =========================================================
-
- * Product Page: http://www.creative-tim.com/product/light-bootstrap-dashboard
- * Copyright 2023 Creative Tim (http://www.creative-tim.com)
- * Licensed under MIT (https://github.com/creativetimofficial/light-bootstrap-dashboard/blob/master/LICENSE.md)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
 import Vue from "vue";
 import VueRouter from "vue-router";
 import App from "./App.vue";
@@ -20,13 +5,30 @@ import App from "./App.vue";
 // LightBootstrap plugin
 import LightBootstrap from "./light-bootstrap-main";
 
+//bootstrap
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+
 // router setup
 import routes from "./routes/routes";
 
 import "./registerServiceWorker";
+
+// Import Bootstrap and BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+import { BootstrapIconsPlugin } from 'bootstrap-icons-vue';
+
 // plugin setup
 Vue.use(VueRouter);
 Vue.use(LightBootstrap);
+
+// Make BootstrapVue available throughout your project
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
+// Vue.use(BootstrapIconsPlugin);
+
 
 // configure router
 const router = new VueRouter({

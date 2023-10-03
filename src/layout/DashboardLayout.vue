@@ -10,7 +10,7 @@
         <i class="nc-icon nc-circle-09"></i>
         <p>Pengguna</p>
       </sidebar-link>
-      <sidebar-link to="/admin/table-list">
+      <sidebar-link to="/admin/major">
         <i class="nc-icon nc-notes"></i>
         <p>Master Prodi</p>
       </sidebar-link>
