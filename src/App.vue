@@ -1,13 +1,3 @@
-<template>
-  <div :class="{'nav-open': $sidebar.showSidebar}">
-    <notifications></notifications>
-    <router-view></router-view>
-  </div>
-</template>
-
-<script>
-  export default {}
-</script>
 <style lang="scss">
   .vue-notifyjs.notifications{
     .list-move {
@@ -36,3 +26,22 @@
     }
   }
 </style>
+
+<template>
+  <div :class="{'nav-open': $sidebar.showSidebar}">
+    <notifications></notifications>
+    <router-view v-if="isAuthenticated"></router-view>
+    <login-page v-else></login-page>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    isAuthenticated() {
+      return this.$store.state.user !== null;
+    },
+  },
+};
+</script>
+
